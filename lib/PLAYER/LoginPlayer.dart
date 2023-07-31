@@ -3,6 +3,7 @@ import 'package:progetto/recuperoPassword.dart';
 import 'package:progetto/transition.dart';
 
 import '../AggiustaSize.dart';
+import 'SignInPlayer.dart';
 
 
 class LoginPlayer extends StatefulWidget {
@@ -204,6 +205,10 @@ class _LoginPlayerState extends State<LoginPlayer> {
                                     )),
                             GestureDetector(
                                 onTap: () {
+                                  Navigator.of(context).push(
+                                    CustomPageRoute(
+                                        child: SignInPlayer(),
+                                        direction:AxisDirection.up),);
                                   print("registrati");
                                 },
                                 child: Padding(

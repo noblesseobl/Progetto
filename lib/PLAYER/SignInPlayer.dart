@@ -19,7 +19,7 @@ class _SignInPlayerState extends State<SignInPlayer> {
   String password="";
   String password2="";
 
-  XFile? imageFile;
+  File ? imageFile;
 
   String nome="";
   String cognome="";
@@ -251,7 +251,7 @@ class _SignInPlayerState extends State<SignInPlayer> {
   }
 
   _getFromGallery() async {
-    XFile? pickedFile = await ImagePicker().pickImage(
+    final pickedFile = await ImagePicker().pickImage(
       source: ImageSource.gallery,
       maxWidth: 1800,
       maxHeight: 1800,
@@ -264,7 +264,7 @@ class _SignInPlayerState extends State<SignInPlayer> {
   }
 
   _getFromCamera() async {
-    PickedFile pickedFile = await ImagePicker().getImage(
+    final pickedFile = await ImagePicker().pickImage(
       source: ImageSource.camera,
       maxWidth: 1800,
       maxHeight: 1800,
@@ -274,7 +274,7 @@ class _SignInPlayerState extends State<SignInPlayer> {
         imageFile = File(pickedFile.path);
       });
     }
-
+  }
 
 }
 
