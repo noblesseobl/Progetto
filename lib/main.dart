@@ -96,7 +96,8 @@ class Hello extends StatelessWidget {
 
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(CustomPageRoute(
+                    Navigator.of(context).push(
+                      CustomPageRoute(
                         child: LoginCircolo(),
                         direction:AxisDirection.up),);
                     print("ciao");

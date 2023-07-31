@@ -66,6 +66,7 @@ class _LoginCircoloState extends State<LoginCircolo> {
                                     ))),
 
                             SizedBox(height: 20,),
+
                             Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 25.0),
                               child: Container(
@@ -99,6 +100,7 @@ class _LoginCircoloState extends State<LoginCircolo> {
                             ),
 
                             SizedBox(height: 10,),
+
                             Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 25.0),
                               child: Container(
