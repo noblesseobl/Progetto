@@ -99,7 +99,6 @@ class Hello extends StatelessWidget {
                       CustomPageRoute(
                         child: LoginCircolo(),
                         direction:AxisDirection.up),);
-                    print("ciao");
                   },
                   style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.zero,

@@ -66,8 +66,9 @@ class _SignInPlayerState extends State<SignInPlayer> {
                       radius: 80,
                     ),
                     SizedBox(height: 15,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    new Wrap(
+                      direction: Axis.horizontal,
+                      alignment: WrapAlignment.center,
                       children: [
                         ElevatedButton(
                           onPressed: () {
