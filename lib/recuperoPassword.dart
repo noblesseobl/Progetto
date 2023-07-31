@@ -21,7 +21,7 @@ class _recuperoPasswordState extends State<recuperoPassword> {
   Widget build(BuildContext context) {
     bool inviato=false;
     return Scaffold(
-      backgroundColor: Colors.pink.shade300,
+      backgroundColor: Colors.pink.shade100,
       resizeToAvoidBottomInset: false,
       body: Center(
         child: Form(
@@ -33,9 +33,10 @@ class _recuperoPasswordState extends State<recuperoPassword> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children:[
+                  SizedBox(height: 80,),
                   Padding(
                       padding: getPadding(top: 11),
-                      child: Text("Inserisci la tua mail",
+                      child: Text("Inserisci la tua email",
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: TextStyle(
@@ -43,7 +44,7 @@ class _recuperoPasswordState extends State<recuperoPassword> {
                               fontSize: 30
                           ))),
 
-                  SizedBox(height: 20,),
+                  SizedBox(height: 80,),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Container(
@@ -69,7 +70,7 @@ class _recuperoPasswordState extends State<recuperoPassword> {
                           },
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'Username'
+                              hintText: 'Email'
                           ),
                         ),
                       ),
@@ -92,7 +93,11 @@ class _recuperoPasswordState extends State<recuperoPassword> {
                       //gestione risposta
                       //cambia route
 
-                    }, child: Text("Invia"),
+                    },
+                    child: Text("Invia", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.pink.shade700, // Background color
+                    ),
                   ),
 
 

@@ -164,7 +164,11 @@ class _LoginCircoloState extends State<LoginCircolo> {
                                 //gestione risposta
                                 //cambia route
 
-                              }, child: Text("Accedi"),
+                              },
+                              child: Text("Accedi"),
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.green.shade700, // Background color
+                              ),
                             ),
 
                             SizedBox(height: 25,),

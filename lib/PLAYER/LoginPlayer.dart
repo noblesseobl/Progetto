@@ -158,7 +158,11 @@ class _LoginPlayerState extends State<LoginPlayer> {
                                 //gestione risposta
                                 //cambia route
 
-                              }, child: Text("Accedi"),
+                              },
+                              child: Text("Accedi"),
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.blueAccent.shade700, // Background color
+                              ),
                             ),
 
                             SizedBox(height: 25,),

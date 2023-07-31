@@ -30,7 +30,7 @@ class _SignInPlayerState extends State<SignInPlayer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green.shade100,
+      backgroundColor: Colors.blue.shade100,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Center(
@@ -59,20 +59,39 @@ class _SignInPlayerState extends State<SignInPlayer> {
                             ))),
 
                     //image picker
-
-                    ElevatedButton(
-                      onPressed: () {
-                        _getFromCamera();
-                      },
-                      child: Text("PICK FROM CAMERA"),
+                    SizedBox(height: 40,),
+                    CircleAvatar(
+                      backgroundColor: Colors.blueGrey.shade200,
+                      backgroundImage: AssetImage('/account.png'),
+                      radius: 80,
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        _getFromGallery();
-                      },
-                      child: Text("PICK FROM GALLERY"),
+                    SizedBox(height: 15,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            _getFromCamera();
+                          },
+                          child: Text("PICK FROM CAMERA"),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.blueAccent.shade700, // Background color
+                          ),
+                        ),
+                        SizedBox(width: 10,),
+                        ElevatedButton(
+                          onPressed: () {
+                            _getFromGallery();
+                          },
+                          child: Text("PICK FROM GALLERY"),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.blueAccent.shade700, // Background color
+                          ),
+                        ),
+                      ],
                     ),
 
+                    SizedBox(height: 30,),
                     //nome
 
                     Padding(
@@ -105,6 +124,8 @@ class _SignInPlayerState extends State<SignInPlayer> {
                       ),
                     ),
 
+                    SizedBox(height: 10,),
+
                     //cognome
 
                     Padding(
@@ -136,6 +157,8 @@ class _SignInPlayerState extends State<SignInPlayer> {
                         ),
                       ),
                     ),
+
+                    SizedBox(height: 10,),
 
                     //email
 
@@ -171,6 +194,7 @@ class _SignInPlayerState extends State<SignInPlayer> {
                       ),
                     ),
 
+                    SizedBox(height: 10,),
                     //password?
 
                     Padding(
@@ -203,6 +227,7 @@ class _SignInPlayerState extends State<SignInPlayer> {
                       ),
                     ),
 
+                    SizedBox(height: 10,),
                     //verifica password????
 
                     Padding(
@@ -230,7 +255,7 @@ class _SignInPlayerState extends State<SignInPlayer> {
                             },
                             decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: 'Password'
+                                hintText: 'Conferma Password'
                             ),
                           ),
                         ),

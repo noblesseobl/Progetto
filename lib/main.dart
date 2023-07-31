@@ -33,7 +33,7 @@ class Hello extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage('/palleracchetta.jpg'),
                 fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.6),
+                colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.45),
                     BlendMode.lighten
                 )
 
@@ -57,7 +57,7 @@ class Hello extends StatelessWidget {
 
 
               Padding(
-                  padding: getPadding(top: 11),
+                  padding: getPadding(top: 20),
                   child: Text("NOME APP!",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
@@ -73,7 +73,7 @@ class Hello extends StatelessWidget {
               // Implement the stroke
 
               Padding(
-                  padding: getPadding(top: 11),
+                  padding: getPadding(top: 20),
                   child: Text("NOME APP!",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
@@ -87,7 +87,7 @@ class Hello extends StatelessWidget {
             ],),
 
 
-              SizedBox(height: 200),
+              SizedBox(height: 180),
 
 
               //altre robe
@@ -113,26 +113,23 @@ class Hello extends StatelessWidget {
                             width: 1
                         ),
                         gradient:
-                        const LinearGradient(
-                            colors: [Colors.blue,
-                              Color(0xff1b44bf)]
-                        ),
-
-                        borderRadius: BorderRadius.circular(25)),
+                        const LinearGradient(colors: [Colors.lightGreen,
+                          Colors.green]),
+                        borderRadius: BorderRadius.circular(19)),
                     child: Container(
                       width: double.infinity,
                       height: 50,
                       alignment: Alignment.center,
                       child: const Text(
                           'Login Circolo',
-                          style: TextStyle(fontSize: 20,fontFamily: 'Poppins', color: Colors.black)
+                          style: TextStyle(fontSize: 20,fontFamily: 'Poppins', color: Colors.white)
                       ),
                     ),
                   ),
                 ),
               ),
 
-              SizedBox(height: 30),
+              SizedBox(height: 15),
 
               Container(
 
@@ -154,9 +151,11 @@ class Hello extends StatelessWidget {
                             width: 1
                         ),
                         gradient:
-                            const LinearGradient(colors: [Colors.purple,
-                              Color(0xff3F005C)]),
-                        borderRadius: BorderRadius.circular(25)),
+                        const LinearGradient(
+                            colors: [Colors.blue,
+                              Color(0xff1b44bf)]
+                        ),
+                        borderRadius: BorderRadius.circular(19)),
                     child: Container(
                       width: double.infinity,
                       height: 50,
