@@ -91,7 +91,7 @@ class Hello extends StatelessWidget {
 
 
 
-              //altre cazzate di benvenuto
+              //altre robe
               Container(
 
                 child: ElevatedButton(
