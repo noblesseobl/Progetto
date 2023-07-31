@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-//aggiunto file transition
+//aggiunto file transitio
 class CustomPageRoute extends PageRouteBuilder{
   final Widget child;
   final AxisDirection direction;
