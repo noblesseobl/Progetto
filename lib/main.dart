@@ -37,7 +37,7 @@ class Hello extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  //altre cazzate di benvenuto
+                  //altre cazzate di benvenut
                   Container(
                     margin: EdgeInsets.fromLTRB(0,0,0,20),
                     child: ElevatedButton(
