@@ -66,6 +66,12 @@ class _SignInPlayerState extends State<SignInPlayer> {
                       },
                       child: Text("PICK FROM CAMERA"),
                     ),
+                    ElevatedButton(
+                      onPressed: () {
+                        _getFromGallery();
+                      },
+                      child: Text("PICK FROM GALLERY"),
+                    ),
 
                     //nome
 
