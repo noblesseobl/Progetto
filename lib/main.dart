@@ -52,8 +52,8 @@ class Hello extends StatelessWidget {
               SizedBox(height: 50),
 
               Stack(
-            alignment: Alignment.center,
-            children: [
+                alignment: Alignment.center,
+                children: [
 
 
               Padding(

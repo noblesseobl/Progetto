@@ -18,8 +18,8 @@ class CustomPageRoute extends PageRouteBuilder{
         child: child,);
 
   Offset getBeginOffset() {
-    switch(direction)
-    {
+    switch(direction) {
+
       case AxisDirection.up:
         return Offset(0,1);
       case AxisDirection.down:

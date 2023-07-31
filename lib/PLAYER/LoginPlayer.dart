@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:progetto/recuperoPassword.dart';
+import 'package:progetto/transition.dart';
 
 import '../AggiustaSize.dart';
 
@@ -175,6 +177,10 @@ class _LoginPlayerState extends State<LoginPlayer> {
 
                             GestureDetector(
                               onTap: (){
+                                Navigator.of(context).push(
+                                  CustomPageRoute(
+                                      child: recuperoPassword(),
+                                      direction:AxisDirection.up),);
                                 print("Recupera");
                               },
                               child: Padding(

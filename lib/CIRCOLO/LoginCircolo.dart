@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:progetto/recuperoPassword.dart';
+import 'package:progetto/transition.dart';
 
 import '../AggiustaSize.dart';
 
@@ -67,6 +69,7 @@ class _LoginCircoloState extends State<LoginCircolo> {
 
                             SizedBox(height: 20,),
 
+                            //email
                             Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 25.0),
                               child: Container(
@@ -101,6 +104,7 @@ class _LoginCircoloState extends State<LoginCircolo> {
 
                             SizedBox(height: 10,),
 
+                            //password
                             Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 25.0),
                               child: Container(
@@ -180,6 +184,10 @@ class _LoginCircoloState extends State<LoginCircolo> {
 
                             GestureDetector(
                               onTap: (){
+                                Navigator.of(context).push(
+                                  CustomPageRoute(
+                                      child: recuperoPassword(),
+                                      direction:AxisDirection.up),);
                                 print("Recupera");
                               },
                               child: Padding(
