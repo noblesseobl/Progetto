@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:progetto/transition.dart';
 
 import 'AggiustaSize.dart';
 import 'CIRCOLO/LoginCircolo.dart';
@@ -95,10 +96,9 @@ class Hello extends StatelessWidget {
 
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) =>  LoginCircolo()),
-                    );
+                    Navigator.of(context).push(CustomPageRoute(
+                        child: LoginCircolo(),
+                        direction:AxisDirection.up),);
                     print("ciao");
                   },
                   style: ElevatedButton.styleFrom(
@@ -138,10 +138,9 @@ class Hello extends StatelessWidget {
 
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) =>  LoginPlayer()),
-                    );
+                    Navigator.of(context).push(CustomPageRoute(
+                        child: LoginPlayer(),
+                        direction:AxisDirection.up),);
                     print('Arrivederci');
                   },
                   style: ElevatedButton.styleFrom(
