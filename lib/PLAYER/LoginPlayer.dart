@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:progetto/PLAYER/HomePlayer.dart';
 import 'package:progetto/recuperoPassword.dart';
 import 'package:progetto/transition.dart';
 
@@ -152,6 +153,10 @@ class _LoginPlayerState extends State<LoginPlayer> {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(content: Text('Processing Data')),
                                   );
+                                  Navigator.of(context).push(
+                                    CustomPageRoute(
+                                        child: HomePlayer(),
+                                        direction:AxisDirection.up),);
                                 }
 
                                 //chiamata http
@@ -177,7 +182,7 @@ class _LoginPlayerState extends State<LoginPlayer> {
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
                                     fontWeight: FontWeight.bold
-                                )
+                                    )
                                 )),
 
                             GestureDetector(
