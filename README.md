@@ -14,3 +14,11 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+
+TO DO:
+
+#Sistemare signin player, navigazione, elemnti mancanti e api image picker
+#signin circolo da sviluppare
+#home giocatore
