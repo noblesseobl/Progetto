@@ -12,6 +12,8 @@ class SignInPlayer extends StatefulWidget {
 }
 
 
+String? get dropdownValue = null;
+
 class _SignInPlayerState extends State<SignInPlayer> {
 
 
@@ -24,11 +26,17 @@ class _SignInPlayerState extends State<SignInPlayer> {
   String nome="";
   String cognome="";
 
+
+  List list =["uomo","donna","altro"];
+  List list2 =["principiante","medio","avanzato"];
+
+
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       resizeToAvoidBottomInset: false,
@@ -265,6 +273,37 @@ class _SignInPlayerState extends State<SignInPlayer> {
 
                     //genere  (dropdown)
 
+                    SizedBox(height: 10,),
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 140),
+                      child: DropdownButton(
+                          items: list!.map<DropdownMenuItem<String>>(
+                                  (dynamic value) {
+                                return DropdownMenuItem<String>(
+                                  child: Text(value),
+                                  value: value.toString(),
+                                );
+                              }).toList(),
+                          value: dropdownValue,
+                          isExpanded: true,
+                          icon: const Icon(Icons.arrow_downward),
+                          elevation: 16,
+                          style:
+                          TextStyle(color: Colors.blueGrey.shade700),
+                          underline: Container(
+                            width: 100,
+                            height: 2,
+                            color: Colors.blueGrey,
+                          ),
+                          onChanged: (String? value) {
+                            setState(() {
+                              dropdownValue = value;
+                              print(dropdownValue);
+                            });
+                          }),
+                    ),
                     //livello (dropdown)
 
                     //circoli ???????

@@ -22,3 +22,29 @@ TO DO:
 #Sistemare signin player, navigazione, elemnti mancanti e api image picker
 #signin circolo da sviluppare
 #home giocatore
+
+homeplayer
+- sostituire scaffold in home player
+- sistema scritta in app bar
+- completa myarea, image picker, testi, dati corretti, modifica dati
+- inizia partite
+- gestisci bottombar (anche l'overflow)
+- gestisci in genere l'overflow
+
+signin (player)
+- dati corretti
+- dropdown menu
+
+signin (circolo)
+- iniziala e copiala dal player
+- dati corretti
+
+main: 
+- overflow
+
+da settare sicuramente per android:
+- import assets
+
+
+da settare sicuramente per ios:
+- image picker
