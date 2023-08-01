@@ -14,6 +14,9 @@ class HomePlayer extends StatefulWidget {
 
 class HomePlayerState extends State<HomePlayer> {
 
+  List<String> list = <String>['One', 'Two', 'Three', 'Four'];
+  String? dropdownValue=null;
+  String? get $dropdownValue => null;
 
   @override
   Widget build(BuildContext context) {
@@ -159,7 +162,9 @@ class HomePlayerState extends State<HomePlayer> {
                         child:  SingleChildScrollView(
 
                           child: Column(
-                            children: [],
+                            children: [
+                              SizedBox(height: 30,)
+                            ],
                           ),
                         ),
                       )
