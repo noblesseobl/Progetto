@@ -147,17 +147,20 @@ class _LoginPlayerState extends State<LoginPlayer> {
 
                             ElevatedButton(
                               onPressed: () {
+                                /*
                                 if (_formKey.currentState!.validate()) {
                                   // If the form is valid, display a snackbar. In the real world,
                                   // you'd often call a server or save the information in a database.
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(content: Text('Processing Data')),
                                   );
+
+                                 */
                                   Navigator.of(context).push(
                                     CustomPageRoute(
                                         child: HomePlayer(),
                                         direction:AxisDirection.up),);
-                                }
+                                //}
 
                                 //chiamata http
                                 //gestione risposta
