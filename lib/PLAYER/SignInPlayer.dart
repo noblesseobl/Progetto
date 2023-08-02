@@ -36,8 +36,8 @@ class _SignInPlayerState extends State<SignInPlayer> {
   String cognome="";
 
 
-  List list =["uomo","donna","altro"];
-  List list2 =["principiante","medio","avanzato"];
+  List list =["Uomo","Donna","Altro"];
+  List list2 =["Principiante","Medio","Avanzato"];
 
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -287,11 +287,11 @@ class _SignInPlayerState extends State<SignInPlayer> {
 
                     //genere  (dropdown)
 
-                    SizedBox(height: 10,),
+                    SizedBox(height: 20,),
 
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 140),
+                          vertical: 20, horizontal: 60),
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                         decoration: BoxDecoration(
@@ -332,7 +332,7 @@ class _SignInPlayerState extends State<SignInPlayer> {
 
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 140),
+                          vertical: 20, horizontal: 60),
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                         decoration: BoxDecoration(
@@ -375,7 +375,7 @@ class _SignInPlayerState extends State<SignInPlayer> {
                     //tasto submit
 
 
-                    SizedBox(height: 5,),
+                    SizedBox(height: 10,),
 
                     ElevatedButton(
                       onPressed: () {
@@ -399,7 +399,7 @@ class _SignInPlayerState extends State<SignInPlayer> {
                         //cambia route
 
                       },
-                      child: Text("Accedi"),
+                      child: Text("Registrati"),
                       style: ElevatedButton.styleFrom(
                         primary: Colors.blueAccent.shade700, // Background color
                       ),

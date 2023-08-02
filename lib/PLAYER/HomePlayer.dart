@@ -154,7 +154,7 @@ class HomePlayerState extends State<HomePlayer> {
 
                           Padding(
                             padding: const EdgeInsets.symmetric(
-                                vertical: 20, horizontal: 140),
+                                vertical: 20, horizontal: 100),
                             child: Container(
                               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                               decoration: BoxDecoration(
@@ -290,13 +290,13 @@ class HomePlayerState extends State<HomePlayer> {
             color: Colors.black,
             child: Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 6),
+                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 7),
               child: GNav(
                 backgroundColor: Colors.black87,
                 color: Colors.white,
                 activeColor: Colors.white,
                 tabBackgroundColor: Colors.white24,
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(11),
                 gap: 8,
                 iconSize: 25,
                 onTabChange: (index) async {
