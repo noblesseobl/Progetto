@@ -151,34 +151,43 @@ class HomePlayerState extends State<HomePlayer> {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15))),
+
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 20, horizontal: 140),
-                            child: DropdownButton(
-                                items: list!.map<DropdownMenuItem<String>>(
-                                    (dynamic value) {
-                                  return DropdownMenuItem<String>(
-                                    child: Text(value),
-                                    value: value.toString(),
-                                  );
-                                }).toList(),
-                                value: dropdownValue,
-                                isExpanded: true,
-                                icon: const Icon(Icons.arrow_downward),
-                                elevation: 16,
-                                style:
-                                    TextStyle(color: Colors.blueGrey.shade700),
-                                underline: Container(
-                                  width: 100,
-                                  height: 2,
-                                  color: Colors.blueGrey,
-                                ),
-                                onChanged: (String? value) {
-                                  setState(() {
-                                    dropdownValue = value;
-                                    print(dropdownValue);
-                                  });
-                                }),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(color: Colors.black)),
+
+                              child: DropdownButton(
+                                  items: list!.map<DropdownMenuItem<String>>(
+                                      (dynamic value) {
+                                    return DropdownMenuItem<String>(
+                                      child: Text(value),
+                                      value: value.toString(),
+                                    );
+                                  }).toList(),
+                                  value: dropdownValue,
+                                  isExpanded: true,
+                                  icon: const Icon(Icons.arrow_downward),
+                                  elevation: 16,
+                                  style:
+                                      TextStyle(color: Colors.blueGrey.shade700),
+                                  underline: Container(
+                                    width: 100,
+                                    height: 2,
+                                    color: Colors.blueGrey,
+                                  ),
+                                  onChanged: (String? value) {
+                                    setState(() {
+                                      dropdownValue = value;
+                                      print(dropdownValue);
+                                    });
+                                  }),
+                            ),
                           ),
                           SizedBox(
                             height: 30,

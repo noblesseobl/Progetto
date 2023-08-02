@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:progetto/AggiustaSize.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../transition.dart';
+import 'HomePlayer.dart';
+
 class SignInPlayer extends StatefulWidget {
    SignInPlayer();
 
@@ -12,10 +15,16 @@ class SignInPlayer extends StatefulWidget {
 }
 
 
-String? get dropdownValue = null;
 
 class _SignInPlayerState extends State<SignInPlayer> {
 
+
+  String? dropdownValue=null;
+  String? dropdownValue2=null;
+  String? dropdownValue3=null;
+  String? get $dropdownValue => null;
+  String? get $dropdownValue2 => null;
+  String? get $dropdownValue3 => null;
 
   String username="";
   String password="";
@@ -68,12 +77,15 @@ class _SignInPlayerState extends State<SignInPlayer> {
 
                     //image picker
                     SizedBox(height: 40,),
+
                     CircleAvatar(
                       backgroundColor: Colors.blueGrey.shade200,
                       backgroundImage: AssetImage('/account.png'),
                       radius: 80,
                     ),
+
                     SizedBox(height: 15,),
+
                     new Wrap(
                       direction: Axis.horizontal,
                       alignment: WrapAlignment.center,
@@ -101,6 +113,8 @@ class _SignInPlayerState extends State<SignInPlayer> {
                     ),
 
                     SizedBox(height: 30,),
+
+
                     //nome
 
                     Padding(
@@ -278,37 +292,118 @@ class _SignInPlayerState extends State<SignInPlayer> {
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 20, horizontal: 140),
-                      child: DropdownButton(
-                          items: list!.map<DropdownMenuItem<String>>(
-                                  (dynamic value) {
-                                return DropdownMenuItem<String>(
-                                  child: Text(value),
-                                  value: value.toString(),
-                                );
-                              }).toList(),
-                          value: dropdownValue,
-                          isExpanded: true,
-                          icon: const Icon(Icons.arrow_downward),
-                          elevation: 16,
-                          style:
-                          TextStyle(color: Colors.blueGrey.shade700),
-                          underline: Container(
-                            width: 100,
-                            height: 2,
-                            color: Colors.blueGrey,
-                          ),
-                          onChanged: (String? value) {
-                            setState(() {
-                              dropdownValue = value;
-                              print(dropdownValue);
-                            });
-                          }),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.black)),
+
+                        child: DropdownButton(
+                            items: list!.map<DropdownMenuItem<String>>(
+                                    (dynamic value) {
+                                  return DropdownMenuItem<String>(
+                                    child: Text(value),
+                                    value: value.toString(),
+                                  );
+                                }).toList(),
+                            value: dropdownValue,
+                            isExpanded: true,
+                            icon: const Icon(Icons.arrow_downward),
+                            elevation: 16,
+                            style:
+                            TextStyle(color: Colors.blueGrey.shade700),
+                            underline: Container(
+                              width: 100,
+                              height: 2,
+                              color: Colors.blueGrey,
+                            ),
+                            onChanged: (String? value) {
+                              setState(() {
+                                dropdownValue = value;
+                                print(dropdownValue);
+                              });
+                            }),
+                      ),
                     ),
+
                     //livello (dropdown)
 
-                    //circoli ??????
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 140),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.black)),
+
+                        child: DropdownButton(
+                            items: list2!.map<DropdownMenuItem<String>>(
+                                    (dynamic value) {
+                                  return DropdownMenuItem<String>(
+                                    child: Text(value),
+                                    value: value.toString(),
+                                  );
+                                }).toList(),
+                            value: dropdownValue2,
+                            isExpanded: true,
+                            icon: const Icon(Icons.arrow_downward),
+                            elevation: 16,
+                            style:
+                            TextStyle(color: Colors.blueGrey.shade700),
+                            underline: Container(
+                              width: 100,
+                              height: 2,
+                              color: Colors.blueGrey,
+                            ),
+                            onChanged: (String? value) {
+                              setState(() {
+                                dropdownValue2 = value;
+                                print(dropdownValue2);
+                              });
+                            }),
+                      ),
+                    ),
+
+                    //circoli pop up?
+
+
 
                     //tasto submit
+
+
+                    SizedBox(height: 5,),
+
+                    ElevatedButton(
+                      onPressed: () {
+                        /*
+                                if (_formKey.currentState!.validate()) {
+                                  // If the form is valid, display a snackbar. In the real world,
+                                  // you'd often call a server or save the information in a database.
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(content: Text('Processing Data')),
+                                  );*/
+
+
+                        Navigator.of(context).push(
+                          CustomPageRoute(
+                              child: HomePlayer(),
+                              direction:AxisDirection.up),);
+                       // }
+
+                        //chiamata http
+                        //gestione risposta
+                        //cambia route
+
+                      },
+                      child: Text("Accedi"),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.blueAccent.shade700, // Background color
+                      ),
+                    ),
 
 
                   ],
@@ -320,6 +415,9 @@ class _SignInPlayerState extends State<SignInPlayer> {
       ),
     );
   }
+
+
+
 
   _getFromGallery() async {
     final pickedFile = await ImagePicker().pickImage(
