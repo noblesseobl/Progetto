@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:progetto/PLAYER/RankingPlayer.dart';
 import 'package:progetto/transition.dart';
 import 'package:rounded_expansion_tile/rounded_expansion_tile.dart';
 
@@ -16,6 +17,7 @@ class HomePlayer extends StatefulWidget {
 String? dropdownValue = null;
 
 class HomePlayerState extends State<HomePlayer> {
+
   List<String> list = <String>['Padel City', 'GPadel', 'Brangis'];
 
   List<String> list2 = <String>['2024', '2023', '2022'];
@@ -32,6 +34,8 @@ class HomePlayerState extends State<HomePlayer> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
+
+
         length: 3,
         child: Scaffold(
           appBar: AppBar(
@@ -59,6 +63,7 @@ class HomePlayerState extends State<HomePlayer> {
               textAlign: TextAlign.center,
             ),
           ),
+
           body: TabBarView(
             children: [
               //my area
@@ -317,6 +322,9 @@ class HomePlayerState extends State<HomePlayer> {
 
             ],
           ),
+
+
+
           bottomNavigationBar: Container(
             color: Colors.black,
             child: Padding(
@@ -333,6 +341,11 @@ class HomePlayerState extends State<HomePlayer> {
                 onTabChange: (index) async {
                   if (index == 1) {
                     await Future.delayed(const Duration(milliseconds: 100));
+                  }else if (index==2){
+                    Navigator.of(context).push(
+                      CustomPageRoute(
+                          child: RankingPlayer(),
+                          direction:AxisDirection.up),);
                   }
                 },
                 tabs: [
