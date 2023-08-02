@@ -33,7 +33,6 @@ homeplayer
 
 signin (player)
 - dati corretti
-- dropdown menu
 
 signin (circolo)
 - iniziala e copiala dal player
