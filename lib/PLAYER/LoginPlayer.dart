@@ -36,6 +36,7 @@ class _LoginPlayerState extends State<LoginPlayer> {
         body: SafeArea(
           child: Center(
             child: SingleChildScrollView(
+            child: SingleChildScrollView(
               child: Form(
 
                   key: _formKey,
@@ -235,7 +236,7 @@ class _LoginPlayerState extends State<LoginPlayer> {
                           ]))),
             ),
           ),
-        ));
+        )));
   }
 
 

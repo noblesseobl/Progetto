@@ -18,6 +18,13 @@ String? dropdownValue = null;
 class HomePlayerState extends State<HomePlayer> {
   List<String> list = <String>['Padel City', 'GPadel', 'Brangis'];
 
+  List<String> list2 = <String>['2024', '2023', '2022'];
+
+
+  String? dropdownValue2=null;
+
+  String? get $dropdownValue2 => null;
+
   String? get $dropdownValue => null;
 
   @override
@@ -220,70 +227,94 @@ class HomePlayerState extends State<HomePlayer> {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          SizedBox(
-                            height: 30,
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.blueGrey,
-                            backgroundImage: AssetImage('/account.png'),
-                            radius: 80,
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Text("Mario Rossi",
+                          //titolo
+
+                          SizedBox(height: 20,),
+
+                          Text("Prossime partite",
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 30)),
+                          //list tile
+
+                          SizedBox(height: 10,),
+
+                          for(int i=0; i<2; i++) Partita(i),
+
+
+
+                          //titolo
+
                           SizedBox(
-                            height: 10,
+                              width: 350,
+                              child: Divider(thickness: 1,color: Colors.black)
                           ),
-                          Text("Livello: intermedio ",
+
+                          SizedBox(height: 20,),
+
+                          Text("Partite giocate",
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: 10,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 30)),
+                          //dropdown
+
+                          SizedBox(height: 10,),
+
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 20, horizontal: 60),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(color: Colors.black)),
+
+                              child: DropdownButton(
+                                  items: list2!.map<DropdownMenuItem<String>>(
+                                          (dynamic value) {
+                                        return DropdownMenuItem<String>(
+                                          child: Text(value),
+                                          value: value.toString(),
+                                        );
+                                      }).toList(),
+                                  value: dropdownValue2,
+                                  isExpanded: true,
+                                  icon: const Icon(Icons.arrow_downward),
+                                  elevation: 16,
+                                  style:
+                                  TextStyle(color: Colors.blueGrey.shade700),
+                                  underline: Container(
+                                    width: 100,
+                                    height: 2,
+                                    color: Colors.blueGrey,
+                                  ),
+                                  onChanged: (String? value) {
+                                    setState(() {
+                                      dropdownValue2 = value;
+                                      print(dropdownValue2);
+                                    });
+                                  }),
+                            ),
                           ),
-                          Text("Rank: 3.6",
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text("Partite vinte: 24",
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text("Partite perse: 4i5",
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text("Partite giocate: 35",
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text("Punti effettuati: 120",
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(
-                            height: 10,
-                          ),
+
+                          //listtile
+
+                          for(int i=0; i<3; i++) Partita(i),
+
+
+
+                          SizedBox(height: 20)
+
                         ],
                       ),
                     ),
                   ))),
+
             ],
           ),
           bottomNavigationBar: Container(
@@ -404,3 +435,139 @@ class _Rank extends State<Rank> {
         ));
   }
 }
+
+class Partita extends StatefulWidget {
+  Partita(this.i);
+
+  int i;
+
+  @override
+  State<Partita> createState() => _PartitaState(i);
+}
+
+
+
+
+class _PartitaState extends State<Partita> {
+
+  int i;
+
+  _PartitaState(this.i);
+
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 75),
+        child: Column(
+          children: [
+            Material(
+              elevation: 30,
+              borderRadius: BorderRadius.circular(12),
+              color: Colors.blue.shade700,
+              shadowColor: Colors.black,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
+                shadowColor: Colors.black26,
+                color: Colors.blue.shade100,
+                child: Column(
+
+
+                    children:[
+                      SizedBox(height:10,),
+                      Text("10/12/23 partita della domenica",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.black,
+                          )),
+                      Text("campo 2 circolo gassino",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                          color: Colors.black,
+                        ),
+                      ),
+                      SizedBox(height: 20,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            children:[
+                              Row(
+                                  children:[
+                                    Text("Mario Rossi \n Lv 3.5"),
+                                    Icon(Icons.minimize_outlined),
+                                    Text("Gianni Lollo \n Lv 3.5"),
+                                  ]
+                              ),
+
+                              SizedBox(
+                                width: 120,
+                                height: 30,
+                                child: Divider(
+                                  height: 20,
+
+                                  color: Colors.black,
+                                  thickness: 1,
+                                ),
+                              ),
+
+                              Row(
+                                children: [
+                                  Text("Mario Rossi \n Lv 3.5",),
+                                  Icon(Icons.minimize_outlined),
+                                  Text("Gianni Lollo \n Lv 3.5"),
+                                ],
+                              ),
+
+
+                            ]
+
+                          ),
+
+                          SizedBox(
+                            width: 30,
+                            height: 70,
+                            child: VerticalDivider(
+                              width: 20,
+                              color: Colors.black,
+                              thickness: 1,
+                            ),
+                          ),
+
+                          Column(
+                            children:[
+                                Text("- - -",
+                                  style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 30
+                                  ),
+                                ),
+                                  Text("- - -",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 30
+                                    ),
+                                  ),
+                            ]
+                          )
+                        ],
+                      ),
+
+                      SizedBox(height: 20,)
+                    ]
+
+                    ),
+              ),
+            ),
+            SizedBox(height: 10,),
+          ],
+        ));
+  }
+}
+
